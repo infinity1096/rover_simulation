@@ -1,0 +1,40 @@
+<launch>
+  <include
+    file="$(find rover)/launch/gazebo.launch" />
+
+
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0"/>
+
+    <remap from="/joint_states" to="rover/joint_states"/>
+  </node>
+
+    <rosparam command="load"
+            file="$(find rover)/config/joints.yaml"
+            ns="rover/rover_joint_state_controller" />
+
+    <rosparam command="load" file="$(find rover)/config/control.yaml" ns="rover"/>
+
+  <node name="rover_motor_controllers" pkg="controller_manager" type="spawner" args="
+                lf_controller
+                lm_controller
+                lb_controller
+                rf_controller
+                rm_controller
+                rb_controller
+		rover_joint_state_controller
+                --shutdown-timeout 10" ns="rover"/>
+  <node name="rover_base_controller" pkg="rover" type="rover_base_controller"/>
+  <node name="rover_teleop_key" pkg="turtlesim" type="turtle_teleop_key">
+    <remap from="turtle1/cmd_vel" to="rover/cmd_vel"/>
+  </node>
+  <node name="rover_odom_pub" pkg="rover" type="rover_odom_publisher"/>
+
+	  
+
+</launch>

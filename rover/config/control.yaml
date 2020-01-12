@@ -1,0 +1,24 @@
+lf_controller:
+        type: effort_controllers/JointVelocityController
+        joint: lf
+        pid: {p: 14, i: 0.08, d: 0}
+lm_controller:
+        type: effort_controllers/JointVelocityController
+        joint: lm
+        pid: {p: 14, i: 0.08, d: 0}
+lb_controller:
+        type: effort_controllers/JointVelocityController
+        joint: lb
+        pid: {p: 14, i: 0.08, d: 0}
+rf_controller:
+        type: effort_controllers/JointVelocityController
+        joint: rf
+        pid: {p: 14, i: 0.08, d: 0}
+rm_controller:
+        type: effort_controllers/JointVelocityController
+        joint: rm
+        pid: {p: 14, i: 0.08, d: 0}
+rb_controller:
+        type: effort_controllers/JointVelocityController
+        joint: rb
+        pid: {p: 14, i: 0.08, d: 0}
