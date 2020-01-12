@@ -871,7 +871,7 @@
       <visualize>true</visualize>
       <topic>__default_topic__</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>imu</topicName>
+        <topicName>/rover/imu</topicName>
         <bodyName>imu_link</bodyName>
         <updateRateHZ>100.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
@@ -971,8 +971,8 @@
       <alwaysOn>1</alwaysOn>
       <updateRate>10.0</updateRate>
       <bodyName>base_link</bodyName>
-      <topicName>fix</topicName>
-      <velocityTopicName>fix_velocity</velocityTopicName>
+      <topicName>rover/gps</topicName>
+      <velocityTopicName>rover/gps_velocity</velocityTopicName>
       <drift>5.0 5.0 5.0</drift>
       <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
       <velocityDrift>0 0 0</velocityDrift>

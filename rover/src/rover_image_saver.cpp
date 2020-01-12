@@ -32,7 +32,7 @@ int main (int argc, char** argv){
      char buffer [80];
      strftime (buffer,80,"%Y-%m-%d-%H:%M:%S",now);
      String s = buffer;
-     s = "/home/rover/videos/" + s + ".avi";
+     s = "/home/inf/catkin_ws/src/rover/videos/" + s + ".avi";
      
     video = VideoWriter(s,CV_FOURCC('M','J','P','G'),30, Size(1280,720));
     
