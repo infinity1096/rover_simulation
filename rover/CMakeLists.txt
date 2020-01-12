@@ -36,7 +36,7 @@ add_executable(rover_base_controller src/rover_base_controller.cpp)
 target_link_libraries(rover_base_controller ${catkin_LIBRARIES})
 add_executable(rover_odom_publisher src/rover_odom_publisher.cpp)
 target_link_libraries(rover_odom_publisher ${catkin_LIBRARIES})
-add_executable(rover_video_saver src/rover_image_saver.cpp)
-target_link_libraries(rover_video_saver ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_executable(rover_image_saver src/rover_image_saver.cpp)
+target_link_libraries(rover_image_saver ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
