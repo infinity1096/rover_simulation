@@ -28,7 +28,7 @@
 ```
 6. Install dependencies for gazebo to communicate with ROS
 ```
-  sudo apt install ros-melodic-gazebo-ros-control ros-melodic-effort-controllers
+  sudo apt install ros-melodic-gazebo-ros-control ros-melodic-effort-controllers ros-melodic-ecl
 ```
 7. Run the simulation demo, control rover movement by arrow keys.
 ```
