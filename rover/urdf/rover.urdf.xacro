@@ -926,17 +926,17 @@
 
 <gazebo reference="body_camera">
   <sensor name="body_camera" type="depth">
-    <update_rate>20</update_rate>
+    <update_rate>30</update_rate>
     <camera>
-      <horizontal_fov>1.047198</horizontal_fov>
+      <horizontal_fov>1.5707963</horizontal_fov>
       <image>
-        <width>640</width>
-        <height>480</height>
+        <width>1920</width>
+        <height>1080</height>
         <format>R8G8B8</format>
       </image>
       <clip>
-        <near>0.05</near>
-        <far>3</far>
+        <near>0.3</near>
+        <far>25</far>
       </clip>
     </camera>
     <plugin name="body_camera_controller" filename="libgazebo_ros_openni_kinect.so">
@@ -950,8 +950,8 @@
       <depthImageInfoTopicName>/rover/body_camera/depth/camera_info</depthImageInfoTopicName>
       <pointCloudTopicName>/rover/body_camera/depth/points</pointCloudTopicName>
       <frameName>camera_link_optical</frameName>
-      <pointCloudCutoff>0.5</pointCloudCutoff>
-      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <pointCloudCutoff>0.3</pointCloudCutoff>
+      <pointCloudCutoffMax>25.0</pointCloudCutoffMax>
       <distortionK1>0.00000001</distortionK1>
       <distortionK2>0.00000001</distortionK2>
       <distortionK3>0.00000001</distortionK3>
